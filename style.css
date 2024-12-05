@@ -1,0 +1,37 @@
+* {
+  cursor: none !important; /* Hide the default cursor */
+}
+body {
+  overflow: hidden; /* Prevent accidental scrollbars from mouse movement */
+  background-color: #333333;
+}
+
+#cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.dot {
+  position: absolute;
+  background-color: yellow; /* Cursor color */
+  box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 50px yellow;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+}
+
+.trail {
+  position: absolute;
+  background-color: brown; /* Trail color */
+  box-shadow: 0 0 10px brown, 0 0 20px brown, 0 0 50px brown;
+  border-radius: 50%;
+  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  transition: top 0.2s ease, left 0.2s ease; /* Smooth follow effect */
+}
